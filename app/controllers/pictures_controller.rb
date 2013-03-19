@@ -10,6 +10,7 @@ def index
 	]
 
 
+	@title = "This is my title"
 end
 
 end
