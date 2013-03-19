@@ -1,9 +1,10 @@
 <h1>Pictures</h1>
 
-<% @pictures.each do |picture| %>
-	<p>
-		<%= @title %>
-		<img src="<%=picture%>">
+<%- @pictures.each do |picture| %>
+	
+	<h3><%= picture [:title] %></h3>
+	<h4><%= picture [:artist] %></h4>
+		<img src="<%= picture[:url] %>">
 	</p>
 <% end %>
 
