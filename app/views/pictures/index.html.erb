@@ -1,6 +1,6 @@
 <h1>Pictures</h1>
 
-<%- @pictures.each do |picture| %>
+<%- @pictures.each do |picture| %> <!-- picture is a hash of the array pictures -->
 	
 	<h3><%= picture [:title] %></h3>
 	<h4><%= picture [:artist] %></h4>
@@ -8,7 +8,3 @@
 	</p>
 <% end %>
 
-<p><%= "hello from ruby".upcase %></p>
-<p><%= 1 + 1 %></p>
-
-<%= @greeting.upcase %>
