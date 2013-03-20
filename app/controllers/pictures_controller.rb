@@ -9,6 +9,7 @@ class PicturesController < ApplicationController
 		@picture = Picture.find params[:id]
 	end
 
+	
 	def new
 	end
 
@@ -20,6 +21,20 @@ class PicturesController < ApplicationController
 		success = @picture.save
 		if success
 			redirect_to pictures_path
+		end
+	end
+
+	def edit
+		@picture = Picture.find params[:id]
+	end
+
+	def update
+		@picture = Picture.find params[:id]
+		@picture.url = params[:url]
+		@picture.title = params[:title]
+		@picture.artist = params[:artist]
+		if @picture.save
+			redirect_to "/pictures/#{@picture.id}"
 		end
 	end
 
