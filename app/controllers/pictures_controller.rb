@@ -12,6 +12,8 @@ class PicturesController < ApplicationController
 	end
 
 	def create
+		# render :text => "Saving a picture. Url: #{params [:url]}"
+		redirect_to
 	end
 
 	def load_pictures
