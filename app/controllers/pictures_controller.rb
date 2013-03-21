@@ -21,8 +21,12 @@ class PicturesController < ApplicationController
 		# @picture.artist = params[:artist]
 		# success = @picture.save
 
-		if Picture.create(params[:picture])
-			redirect_to '/pictures' #pictures_path
+		@picture = Picture.new(params[:picture])
+		if @picture.save
+			redirect_to pictures_path
+		else
+			flash.now[:error] = "Could not save the picture. Please try again."
+			render :new
 		end
 	end
 
@@ -31,16 +35,21 @@ class PicturesController < ApplicationController
 	end
 
 	def update
-		@picture = Picture.find (params[:id])
-		success = @picture.update_attributes(
-			:title => params[:title], 
-			:artist => params[:artist], 
-			:url => params[:url]
-			)
-		if success
-			redirect_to "/pictures/#{@picture.id}"	
+		@picture = Picture.find(params[:id])
+		
+			# :title => params[:title], 
+			# :artist => params[:artist], 
+			# :url => params[:url]
+			# )
+		if @picture.update_attributes(params[:picture])
+			# redirect_to "/pictures/#{@picture.id}"
+			#redirect_to picture_path(@picture.id)	
+			#named routes are convenience methods created by
+			#ruby to help us naviage the application
+			#redirect_to picture_path(@picture)
+			redirect_to @picture 
 		else
-			redirect_to'/pictures'
+			redirect_to pictures_path
 		end
 	end
 

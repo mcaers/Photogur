@@ -1,11 +1,17 @@
 <h1>Pictures</h1>
 
-<%- @pictures.each do |picture| %> <!-- picture is a hash of the array pictures -->
+
+
+<% @pictures.each do |picture| %> <!-- picture is a hash of the array pictures -->
 	
-	<h3><%= picture .title %></h3>
-	<h4><%= picture .artist %></h4>
-		<img src="<%= picture.url %>">
-	</p>
+	<h2><%= picture.title %></h2>
+	
+	<h3><%= picture.artist %></h3>
+	<%= button_to "Edit", edit_picture_path(picture), :method => :get%>
+	
+	<%= link_to picture_path(picture) do %>
+	<img src="<%= picture.url %>">
+	<% end %>
 <% end %>
 
 

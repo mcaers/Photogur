@@ -1,17 +1,20 @@
 Photogur::Application.routes.draw do
-
-  get 'pictures'=> 'pictures#index'
   root :to => 'pictures#index'
+  
+  resources :pictures
 
-  get 'pictures/:id/edit' => 'pictures#edit'
-  post 'pictures/:id'     => 'pictures#update'
+  # get 'pictures'=> 'pictures#index'
 
-  # Post vs Get
-  # Post sends information to the server instead of just getting information
-  get 'pictures/new' => 'pictures#new'
-  post 'pictures' => "pictures#create"
 
-  get 'pictures/:id'=> 'pictures#show'
+  # get 'pictures/:id/edit' => 'pictures#edit'
+  # post 'pictures/:id'     => 'pictures#update'
+
+  # # Post vs Get
+  # # Post sends information to the server instead of just getting information
+  # get 'pictures/new' => 'pictures#new'
+  # post 'pictures' => "pictures#create"
+
+  # get 'pictures/:id'=> 'pictures#show'
 
 
 
