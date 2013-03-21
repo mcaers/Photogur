@@ -15,13 +15,14 @@ class PicturesController < ApplicationController
 	end
 
 	def create
-		@picture = Picture.new
-		@picture.url = params[:url]
-		@picture.title = params[:title]
-		@picture.artist = params[:artist]
-		success = @picture.save
-		if success
-			redirect_to pictures_path
+		# @picture = Picture.new
+		# @picture.url = params[:url]
+		# @picture.title = params[:title]
+		# @picture.artist = params[:artist]
+		# success = @picture.save
+
+		if Picture.create(params[:picture])
+			redirect_to '/pictures' #pictures_path
 		end
 	end
 
