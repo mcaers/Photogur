@@ -37,6 +37,8 @@ class PicturesController < ApplicationController
 			)
 		if success
 			redirect_to "/pictures/#{@picture.id}"	
+		else
+			redirect_to'/pictures'
 		end
 	end
 
