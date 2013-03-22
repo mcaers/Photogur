@@ -9,10 +9,15 @@ class PicturesController < ApplicationController
 		@picture = Picture.find params[:id]
 	end
 
-	
 	def new
 		@picture = Picture.new
 	end
+
+	def destroy
+	 	@picture = Picture.find params[:id]
+	 	@picture.destroy
+	 	redirect_to pictures_path
+	end 
 
 	def create
 		# @picture = Picture.new

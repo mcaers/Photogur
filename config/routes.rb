@@ -3,6 +3,8 @@ Photogur::Application.routes.draw do
   
   resources :pictures
 
+  #ORDER matters, rails matches order of routes
+
   # get 'pictures'=> 'pictures#index'
 
 

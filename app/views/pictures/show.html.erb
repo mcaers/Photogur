@@ -1,4 +1,7 @@
 <h1><%= @picture[:title] %></h1>
 	<h2><%= @picture [:artist] %></h2>
-	<%= button_to "Edit", edit_picture_path(@picture), :method => :get%>
+	<%= button_to "Edit", edit_picture_path(@picture), :method => :get %>
+	<p>
+	<%= button_to "Delete", @picture, :method => :delete, :confirm => "Are you sure?" %>
+	</p>
 	<img src="<%= @picture[:url] %>">
