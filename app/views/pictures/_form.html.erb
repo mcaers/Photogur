@@ -1,0 +1,23 @@
+<%= form_for @picture do |f| %>
+	<p>
+		<label>Artist</label><br>
+		<!-- <input type="text" name="artist"/> -->
+		<%= f.text_field "artist" %>
+
+	</p>
+	<p>
+		<label>Title</label><br>
+		<!-- <input type="text" name="title"/> -->
+		<%= @picture.errors[:title].join(",") %>
+		<%= f.text_field "title" %>
+	</p>
+	<p>
+		<label>URL</label><br>
+		<!-- <input type="text" name="url"/> -->
+		<%= @picture.errors[:url].join(",") %>
+	<%= f.text_field "url" %>
+	</p>
+	<p>
+		<%=f.submit "Save"%>
+	</p>
+<% end %>
