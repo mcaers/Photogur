@@ -1,6 +1,12 @@
 <h1><%= @picture[:title] %></h1>
 	<h2><%= @picture [:artist] %></h2>
-		
+	<p>
+	<%= button_to "Edit", edit_picture_path(@picture), :method => :get %>
+	</p>
+	<p>
+	<%= button_to "Delete", @picture, :method => :delete, :confirm => "Are you sure?" %>
+	</p>
+	
 	<% if @picture.copyrighted %>
 	<p>
 		This picture is copyrighted. 

@@ -2,7 +2,11 @@ class PicturesController < ApplicationController
 	# before_filter :load_pictures #loads pictures from array before looking at any other code on the page
 
 	def index
-		@pictures = Picture.all
+		if params[:free] == "yes"
+			@pictures = Picture.where(:copyrighted => false).all
+		else
+			@pictures = Picture.all
+		end
 	end
 
 	def show
