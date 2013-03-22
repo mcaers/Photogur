@@ -1,6 +1,6 @@
 class Picture < ActiveRecord::Base
 	# allow mass-assignment for the attributes title and artist
-	attr_accessible :title, :artist, :url	
+	attr_accessible :title, :artist, :url, :copyrighted
 
 	validates :title, :presence => true
 	validates :url,	{		
